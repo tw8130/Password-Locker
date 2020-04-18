@@ -1,20 +1,27 @@
+import unittest #Importing the unittest module
+from user_credentials import User 
 
-global users_list
-class User:
+class TestUser(unittest.TestCase):
     '''
-    Class that creates a users account and saves their information
+    Test class that defines test cases for the user class behaviours.
+
+    Args:
+    unittest.TestCase: TestCase that helps in creating test cases
     '''
-
-    #global users_list
-    users_list=[]   #the class variable
-
-    def __init__(self,first_name,last_name,password):
+    def setUp(self):
         '''
-        The __init__ method that helps us define properties for our objects
+        SetUp method to run before each test cases
         '''
-        #Instance variables
-        self.first_name =first_name
-        self.last_name =last_name
-        self.password = password
-        
+        self.new_user = User('Tabby' ,'Wanjiku' ,'twpd254')
+
+    def test__init__(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+        self.assertEqual(self.new_user.first_name,'Tabby')
+        self.assertEqual(self.new_user.last_name,'Wanjiku')
+        self.assertEqual(self.new_user.password,'twpd254') 
+
+if __name__ == '__main__':
+    unittest.main()
         
