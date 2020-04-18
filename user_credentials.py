@@ -22,3 +22,22 @@ class User:
         save_user method saves user objects into users_list
         '''
         User.users_list.append(self)
+
+class Credentials:
+    '''
+    Class to create an account credentials,delete,view,save information and generate passwords
+    '''
+    #Class variables
+    credentials_list =[]
+    user_credentials_list =[]
+
+    @classmethod
+    def check_user(cls,first_name,password):
+        '''
+        Method checks if users input matches entries in users_list
+        '''
+        current_user =''
+        for user in User.users_list:
+            if(user.first_name == first_name and user.password == password):
+                current_user = user.first_name
+        return current_user
