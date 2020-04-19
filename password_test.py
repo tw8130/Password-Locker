@@ -1,5 +1,5 @@
 import unittest #Importing the unittest module
-from user_credentials import User 
+from user_credentials import User , Credential
 
 class TestUser(unittest.TestCase):
     '''
@@ -52,6 +52,32 @@ class TestCredentials(unittest.TestCase):
         return current_user
 
         self.assertEqual(current_user ,Credential.check_user(user2.password ,user2.first_name))
+
+    def setUp(self):
+        '''
+        SetUp method to run before each test cases for credentials class
+        '''
+        self.new_credential= Credential('Tabby','Instagram','google.com','twpd254')
+
+    def test__init__(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+        self.assertEqual(self.new_credential.user_name,'Tabby')
+        self.assertEqual(self.new_credential.account_name,'Instagram')
+        self.assertEqual(self.new_credential.site_name ,'google.com')
+        self.assertEqual(self.new_credential.password,'twpd254')
+
+    def test_save_credentials(self):
+        '''
+        Test to check if the new credential info is saved in the credentials_list
+        '''
+        self.new_credential.save_credentials()
+        instagram = Credential('Tabby','Instagram','google.com','twpd254')
+        instagram.save_credentials()
+        self.assertEqual(len(Credential.credentials_list),2)
+
+        
 
 
 if __name__ == '__main__':
