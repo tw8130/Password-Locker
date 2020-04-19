@@ -1,4 +1,5 @@
-
+import random
+import string
 global users_list
 class User:
     '''
@@ -64,4 +65,20 @@ class Credential:
         '''
         Credential.credentials_list.remove(self)
 
+    # def generate_password(size=8, char=string.ascii_uppercase+string.acsii_lowercase+string.digits):
+    #     '''
+    #     Method to generate an 8 character password for a credential account
+    #     '''
+    #     gen_pass=''.join(random.choice(char) for_in range(size))
+    #     return gen_pass
 
+    @classmethod
+    def dislpay_credentials(cls,user_name):
+        '''
+        Class method to display list of credentials saved
+        '''
+        user_credentials_list=[]
+        for credential in cls.credentials_list:
+            if credential.user_name == user_name:
+                user_credentials_list.append(credential)
+        return user_credentials_list
