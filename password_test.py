@@ -27,7 +27,7 @@ class TestUser(unittest.TestCase):
         Test to check if the users info is saved in the users_list
         '''
         self.new_user.save_user() #saving the new user
-        self.assertEqual(len(User.users_list),3)
+        self.assertEqual(len(User.users_list),1)
 
 
 class TestCredentials(unittest.TestCase):
@@ -77,7 +77,23 @@ class TestCredentials(unittest.TestCase):
         instagram.save_credentials()
         self.assertEqual(len(Credential.credentials_list),2)
 
-        
+    def tearDown(self) :
+        '''
+        tearDown method that does clean up after each test case has run. 
+        '''
+        Credential.credentials_list = []  
+        User.users_list = []
+
+    def test_delete_credentials(self):
+        '''
+        test_delete_credentials to test if we can remove a credential from our credentials_list
+        '''
+        self.new_credential.save_credentials() 
+        instagram = Credential('Tabby','Instagram','google.com','twpd254') #new credential
+        instagram.save_credentials()
+
+        self.new_credential.delete_credentials()# Deleting a credential object
+        self.assertEqual(len(Credential.credentials_list),1)
 
 
 if __name__ == '__main__':
