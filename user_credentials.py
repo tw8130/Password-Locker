@@ -41,3 +41,21 @@ class Credentials:
             if(user.first_name == first_name and user.password == password):
                 current_user = user.first_name
         return current_user
+
+    def __init__(self,user_name,account_name,site_name,password):
+        '''
+        The __init__ method that helps us define properties for our objects
+        '''
+        #instance variables
+        self.user_name = user_name
+        self.account_name = account_name
+        self.site_name = site_name
+        self.password = password
+    
+    def save_credentials(self):
+        '''
+        Method to save credentials instance objects that are newly created
+        '''
+        Credential.credentials_list.append(self)
+
+
