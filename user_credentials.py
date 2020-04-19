@@ -57,5 +57,11 @@ class Credential:
         Method to save credentials instance objects that are newly created
         '''
         Credential.credentials_list.append(self)
+    
+    def del_credentials(self):
+        '''
+        delete_contact method deletes a saved credentials from the credentials_list
+        '''
+        Credential.credentials_list.remove(self)
 
 
