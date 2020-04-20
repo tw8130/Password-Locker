@@ -73,8 +73,8 @@ class TestCredentials(unittest.TestCase):
         Test to check if the new credential info is saved in the credentials_list
         '''
         self.new_credential.save_credentials()
-        instagram = Credential('Tabby','Instagram','google.com','twpd254')
-        instagram.save_credentials()
+        facebook = Credential('Ariana','Facebook','google.com','twpd254')
+        facebook.save_credentials()
         self.assertEqual(len(Credential.credentials_list),2)
 
     def tearDown(self) :
@@ -89,11 +89,21 @@ class TestCredentials(unittest.TestCase):
         test_delete_credentials to test if we can remove a credential from our credentials_list
         '''
         self.new_credential.save_credentials() 
-        instagram = Credential('Tabby','Instagram','google.com','twpd254') #new credential
-        instagram.save_credentials()
+        facebook = Credential('Ariana','Facebook','google.com','twpd254') #new credential
+        facebook.save_credentials()
 
         self.new_credential.delete_credentials()# Deleting a credential object
         self.assertEqual(len(Credential.credentials_list),1)
+
+    def test_find_by_account_name(self):
+        '''
+        test to check if we can find a credential by account_name and display information
+        '''
+        self.new_credential.save_credentials()
+        facebook = Credential('Ariana','Facebook','google.com','twpd254')
+        facebook.save_credentials()
+        credential_exists= Credential.find_by_account_name('Facebook')
+        self.assertEqual(credential_exists,facebook)
 
 
 if __name__ == '__main__':

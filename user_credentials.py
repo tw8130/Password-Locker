@@ -65,20 +65,16 @@ class Credential:
         '''
         Credential.credentials_list.remove(self)
 
-    # def generate_password(size=8, char=string.ascii_uppercase+string.acsii_lowercase+string.digits):
-    #     '''
-    #     Method to generate an 8 character password for a credential account
-    #     '''
-    #     gen_pass=''.join(random.choice(char) for_in range(size))
-    #     return gen_pass
-
     @classmethod
-    def dislpay_credentials(cls,user_name):
+    def find_by_account_name(cls,account_name):
         '''
-        Class method to display list of credentials saved
+        Method that takes in an account name and returns a credential that matches that account
+        
+        Args:
+            account_name: account name to search for
+        Returns :
+            Credential of  a person that matches the account name.
         '''
-        user_credentials_list=[]
         for credential in cls.credentials_list:
-            if credential.user_name == user_name:
-                user_credentials_list.append(credential)
-        return user_credentials_list
+            if credential.account_name == account_name:
+                return credential
