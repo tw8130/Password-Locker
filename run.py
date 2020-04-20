@@ -22,3 +22,16 @@ def verify_user(first_name,password):
     checking_user = Credential.check_user(first_name,password)
     return checking_user
 
+def create_credential(user_name,account_name,site_name,password):
+    '''
+    Function to create a new credential account
+    '''
+    new_credential = Credential(user_name,account_name,site_name,password)
+    return new_credential
+
+def save_credential(credential):
+    '''
+    Function to save a new credential account
+    '''
+    Credential.save_credentials(credential)
+
