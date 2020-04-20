@@ -1,4 +1,5 @@
 import unittest #Importing the unittest module
+import pyperclip
 from user_credentials import User , Credential
 
 class TestUser(unittest.TestCase):
@@ -115,6 +116,21 @@ class TestCredentials(unittest.TestCase):
         twitter = Credential('Ariana','Twitter','google.com','twpd254')
         twitter.save_credentials()
         self.assertEqual(len(Credential.display_credentials(facebook.user_name)),2)
+
+    def test_copy_credential(self):
+        '''
+        Test to check if the method copies a users credential to the clipboard
+        '''
+        self.new_credential.save_credentials()
+        facebook = Credential('Ariana','Facebook','google.com','twpd254')
+        facebook.save_credentials()
+        find_credential = None
+        for credential in Credential.user_credentials_list:
+            find_credential = Credential.find_by_account_name(credential.account_name)
+            return pyperclip.copy(find_credential.password)
+        Credential.copy_credential(self.new_credential.account_name)
+        self.assertEqual('twpd254',pyperclip.paste())
+        print(pyperclip.paste())
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

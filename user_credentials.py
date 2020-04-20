@@ -89,7 +89,7 @@ class Credential:
         for credential in cls.credentials_list:
             if credential.user_name == user_name:
                 user_credentials_list.append(credential)
-        return 
+        return user_credentials_list
     
     @classmethod
     def copy_credential(cls,account_name):
@@ -98,3 +98,5 @@ class Credential:
         '''
         find_credential = Credential.find_by_account_name(account_name)
         return pyperclip.copy(find_credential.password)
+
+    
