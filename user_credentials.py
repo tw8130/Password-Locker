@@ -78,3 +78,14 @@ class Credential:
         for credential in cls.credentials_list:
             if credential.account_name == account_name:
                 return credential
+    
+    @classmethod
+    def display_credentials(cls,user_name):
+        '''
+        Method to display list of credentials saved
+        '''
+        user_credentials_list =[]
+        for credential in cls.credentials_list:
+            if credential.user_name == user_name:
+                user_credentials_list.append(credential)
+        return user_credentials_list
