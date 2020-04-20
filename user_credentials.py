@@ -105,3 +105,5 @@ class Credential:
         '''
         gen_pass=''.join(random.choice(char) for _ in range(length))
         return gen_pass
+
+    
