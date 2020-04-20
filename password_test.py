@@ -105,16 +105,16 @@ class TestCredentials(unittest.TestCase):
         credential_exists= Credential.find_by_account_name('Facebook')
         self.assertEqual(credential_exists,facebook)
 
-    # def test_display_credentials(self):
-    #     '''
-    #     Test  method that returns a users credentials that are saved
-    #     '''
-    #     self.new_credential.save_credentials()
-    #     facebook = Credential('Ariana','Facebook','google.com','twpd254')
-    #     facebook.save_credentials()
-    #     twitter = Credential('Ariana','Twitter','google.com','twpd254')
-    #     twitter.save_credentials()
-    #     self.assertEqual(len(Credential.display_credentials(facebook.user_name)),2)
+    def test_display_credentials(self):
+        '''
+        Test  method that returns a users credentials that are saved
+        '''
+        self.new_credential.save_credentials()
+        facebook = Credential('Ariana','Facebook','google.com','twpd254')
+        facebook.save_credentials()
+        twitter = Credential('Ariana','Twitter','google.com','twpd254')
+        twitter.save_credentials()
+        self.assertEqual(len(Credential.display_credentials(facebook.user_name)),2)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
