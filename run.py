@@ -35,3 +35,17 @@ def save_credential(credential):
     '''
     Credential.save_credentials(credential)
 
+def del_credential(credential):
+    '''
+    Function to delete an unwanted credential
+    '''
+    Credential.delete_credentials(credential)
+
+def find_credential(account_name):
+    '''
+    Function that finds a credential by account_name and returns the credential
+    '''
+    return Credential.find_by_account_name(account_name)
+
+
+
