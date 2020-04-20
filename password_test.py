@@ -113,7 +113,7 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.save_credentials()
         facebook = Credential('Ariana','Facebook','google.com','twpd254')
         facebook.save_credentials()
-        twitter = Credential('Ariana','Twitter','google.com','twpd254')
+        twitter = Credential('Ariana','Twitter','google.com','twpd254') 
         twitter.save_credentials()
         self.assertEqual(len(Credential.display_credentials(facebook.user_name)),2)
 
@@ -131,6 +131,8 @@ class TestCredentials(unittest.TestCase):
         Credential.copy_credential(self.new_credential.account_name)
         self.assertEqual('twpd254',pyperclip.paste())
         print(pyperclip.paste())
+    
+    
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

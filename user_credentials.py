@@ -99,4 +99,9 @@ class Credential:
         find_credential = Credential.find_by_account_name(account_name)
         return pyperclip.copy(find_credential.password)
 
-    
+    def generate_password(length=8 ,char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
+        '''
+        Method that generates an 8 character password for a credential account
+        '''
+        gen_pass=''.join(random.choice(char) for _ in range(length))
+        return gen_pass
