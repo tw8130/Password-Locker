@@ -47,5 +47,25 @@ def find_credential(account_name):
     '''
     return Credential.find_by_account_name(account_name)
 
+def display_credentials(user_name):
+    '''
+    Function to display the credentials saved
+    '''
+    return Credential.display_credentials(user_name)
+
+def copy_credential(account_name):
+    '''
+    Function that copies the credentials information to the clipboard
+    '''
+    return Credential.copy_credential(account_name)
+
+def generate_password():
+    '''
+    Function that generates a password according to the users length
+    '''
+    gen_pass = Credential.generate_password()
+    return gen_pass
+
+
 
 
