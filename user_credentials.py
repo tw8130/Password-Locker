@@ -1,5 +1,6 @@
 import random
 import string
+import pyperclip
 global users_list
 class User:
     '''
@@ -88,4 +89,7 @@ class Credential:
         for credential in cls.credentials_list:
             if credential.user_name == user_name:
                 user_credentials_list.append(credential)
-        return user_credentials_list
+        return 
+    
+    @classmethod
+    def 
