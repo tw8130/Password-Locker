@@ -137,7 +137,10 @@ def main():
                         if ch_psw == 'ee':
                             print(" ")
                             password = input('Enter your password').strip()
-                            break
+                            print('\n')
+                            save_credential(create_credential(user_name,account_name,site_name,password))
+                            print(' ')
+                            print(f'View your credential: Account name {account_name}- Site name {site_name}- Password {password}')
                         elif ch_psw == 'gp':
                             password = generate_password()
                             print(password)
