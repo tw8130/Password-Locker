@@ -11,13 +11,17 @@ These are the behaviours/features that the application implements for use by a u
 As a user I would like:
 
 To create an account with my details - log in and password
+
 Store my existing login credentials
+
 Generate a password for a new credential/account
+
 Copy my credentials to the clipboard
+
 # BDD
 Behaviour	                              Input	                                        Output
-Display codes for navigation	        In terminal:                 | Welocome to                             
-                                      $./password_locker.py         |the application! use the short codes
+Display codes for navigation	        |In terminal:                 | Welocome to                           
+                                     |$./password_locker.py         |the application! use the short codes
                                                                     |cc-Create nwe user,li-login
                                         	                          |ex-exit the navigation
 
@@ -42,17 +46,21 @@ Log out of the application                | Enter: lo  Log out of the applicatio
 # SETUP INSTALLATION
 ## Prerequisites
 python3.6
+
 pip
+
 pyperclip
 ## Cloning
 In your terminal:
 
   $ git clone https://github.com/tw8130/Password-Locker/
+
   $ cd Password
 ## Running the Application
 To run the application, in your terminal:
 
   $ chmod +x run.py
+
   $ ./run.py
 ## Testing the Application
 To run the tests for the class file:
@@ -61,10 +69,13 @@ To run the tests for the class file:
 
 ## KNOWN BUGS:
 Any bugs noted you can email me for clarification.
+
 ## TECHNOLOGIES USED:
 .Python3.6
+
 ## CONTACT INFO:
 You can email at:mwangitabitha2020@gmail.com
+
 ## LICENSE:
 MIT License
 
