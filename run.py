@@ -141,15 +141,18 @@ def main():
                         elif ch_psw == 'gp':
                             password = generate_password()
                             print(password)
-                            break
+                            print('\n')
+                            save_credential(create_credential(user_name,account_name,site_name,password))
+                            print(' ')
+                            print(f'View your credential: Account name {account_name}- Site name {site_name}- Password {password}')
                             
                         elif ch_psw == 'ex':
                             break
                         else:
                             print('Try again Please enter valid option!!')
-                        save_credential(create_credential(user_name,account_name,site_name,password))
-                        print(' ')
-                        print(f'View your credential: Account name {account_name}- Site name {site_name}- Password {password}')
+                        # save_credential(create_credential(user_name,account_name,site_name,password))
+                        # print(' ')
+                        # print(f'View your credential: Account name {account_name}- Site name {site_name}- Password {password}')
                         print('\n')
 
                 elif short_code == 'dp':
